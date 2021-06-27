@@ -31,11 +31,11 @@ button {
     border: transparent;
 }
 
-.scoreOne {
+.playerOne {
     background-color: #60bfbf;
 }
 
-.scoreTwo {
+.playerTwo {
     background-color: #f9944c;
 }
 
