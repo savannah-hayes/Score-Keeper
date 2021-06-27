@@ -1,0 +1,44 @@
+h2,
+p {
+    padding-left: 10px;
+}
+
+.card {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.card-body{
+    padding: 0;
+
+}
+
+h1 {
+    font-size: 12px;
+    padding: 15px 10px 0 10px;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+button {
+    width: 129px;
+    margin-right: -6px;
+    color: white;
+    padding: 8px 0;
+    border: transparent;
+}
+
+.scoreOne {
+    background-color: #60bfbf;
+}
+
+.scoreTwo {
+    background-color: #f9944c;
+}
+
+.reset {
+    background-color: #8959d7;
+}
