@@ -1,16 +1,30 @@
-const scoreOne = document.querySelector("#scoreOne");
-const scoreTwo = document.querySelector("#scoreTwo");
-const playerOne = document.querySelector("#playerOne");
-const playerTwo = document.querySelector("#playerTwo");
+const playerOne = document.querySelector("#playerOneScore");
+const playerTwo = document.querySelector("#playerTwoScore");
+const playerOneButton = document.querySelector("#playerOneButton");
+const playerTwoButton = document.querySelector("#playerTwoButton");
+const resetButton = document.querySelector(".reset");
+let playerOneScore = 0;
+let playerTwoScore = 0;
+let winningScore = 5;
 
-for (let i = 0; i <= 5; i++){
-    playerOne.addEventListener("click", () => {
-        scoreOne.innerText = i;
-    });
-}
+playerOneButton.addEventListener("click", () => {
+  playerOneScore += 1;
+  playerOne.textContent = playerOneScore;
+  if (playerOneScore === winningScore) {
+    playerOne.style.color = "green";
+    playerTwo.style.color = "red";
+    playerOneButton.disabled = true;
+    playerTwoButton.disabled = true;
+  }
+});
 
-for (let i = 0; i <= 5; i++){
- playerTwo.addEventListener("click", () => {
-        scoreTwo.innerText = i;
-    })
-}
+playerTwoButton.addEventListener("click", () => {
+  playerTwoScore += 1;
+  playerTwo.textContent = playerTwoScore;
+  if (playerTwoScore === winningScore) {
+    playerTwo.style.color = "green";
+    playerOne.style.color = "red";
+    playerOneButton.disabled = true;
+    playerTwoButton.disabled = true;
+  }
+});
