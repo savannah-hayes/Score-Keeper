@@ -1,5 +1,6 @@
 h2,
-p {
+p,
+.settingScore {
   padding-left: 10px;
 }
 
@@ -30,6 +31,27 @@ button {
   border: transparent;
 }
 
+button:focus {
+  outline: none;
+}
+
+.settingScore {
+  margin-bottom: 15px;
+}
+
+.playTo {
+  border-radius: 15px;
+  padding: 1px 1px;
+}
+
+.playTo:focus {
+  outline: none;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
 .playerOne {
   background-color: #60bfbf;
 }
@@ -40,8 +62,4 @@ button {
 
 .reset {
   background-color: #8959d7;
-}
-
-.playingTo {
-  display: inline;
 }

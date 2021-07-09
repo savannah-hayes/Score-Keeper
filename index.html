@@ -28,9 +28,18 @@
           <span id="playerTwoScore">0</span>
         </h2>
         <p class="card-text">Use the buttons below to keep score.</p>
-        <p>Play to</p>
-        <button class="playerOne" id="playerOneButton">+1 Player One</button>
-        <button class="playerTwo" id="playerTwoButton">+1 Player Two</button>
+        <div class="settingScore">
+          Play to
+          <select name="" id="playTo" class="playTo">
+            <option value="5">5</option>
+            <option value="8">8</option>
+            <option value="11">11</option>
+            <option value="15">15</option>
+            <option value="21">21</option>
+          </select>
+        </div>
+        <button class="player" id="playerOneButton">+1 Player One</button>
+        <button class="player" id="playerTwoButton">+1 Player Two</button>
         <button class="reset">Reset</button>
       </div>
     </div>
