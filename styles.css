@@ -35,6 +35,10 @@ button:focus {
   outline: none;
 }
 
+button:disabled {
+  opacity: 0.6;
+}
+
 .settingScore {
   margin-bottom: 15px;
 }

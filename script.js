@@ -1,37 +1,40 @@
-const playerOne = document.querySelector("#playerOneScore");
-const playerTwo = document.querySelector("#playerTwoScore");
-const playerOneButton = document.querySelector("#playerOneButton");
-const playerTwoButton = document.querySelector("#playerTwoButton");
+const playerOne = {
+  score: 0,
+  button: document.querySelector("#playerOneButton"),
+  display: document.querySelector("#playerOneScore"),
+};
+
+const playerTwo = {
+  score: 0,
+  button: document.querySelector("#playerTwoButton"),
+  display: document.querySelector("#playerTwoScore"),
+};
+
 const resetButton = document.querySelector(".reset");
 const gameScoreSelect = document.querySelector("#playTo");
-
-let playerOneScore = 0;
-let playerTwoScore = 0;
 let winningScore = 5;
 let isGameOver = false;
 
-playerOneButton.addEventListener("click", () => {
+function displayScore(player, opponent) {
   if (!isGameOver) {
-    playerOneScore += 1;
-    if (playerOneScore === winningScore) {
+    player.score += 1;
+    if (player.score === winningScore) {
       isGameOver = true;
-      playerOne.style.color = "green";
-      playerTwo.style.color = "red";
+      player.display.style.color = "green";
+      opponent.display.style.color = "red";
+      player.button.disabled = true;
+      opponent.button.disabled = true;
     }
-    playerOne.textContent = playerOneScore;
+    player.display.textContent = player.score;
   }
+}
+
+playerOne.button.addEventListener("click", () => {
+  displayScore(playerOne, playerTwo);
 });
 
-playerTwoButton.addEventListener("click", () => {
-  if (!isGameOver) {
-    playerTwoScore += 1;
-    if (playerTwoScore === winningScore) {
-      isGameOver = true;
-      playerTwo.style.color = "green";
-      playerOne.style.color = "red";
-    }
-    playerTwo.textContent = playerTwoScore;
-  }
+playerTwo.button.addEventListener("click", () => {
+  displayScore(playerTwo, playerOne);
 });
 
 gameScoreSelect.addEventListener("change", (event) => {
@@ -43,10 +46,12 @@ resetButton.addEventListener("click", reset);
 
 function reset() {
   isGameOver = false;
-  playerOneScore = 0;
-  playerTwoScore = 0;
-  playerOne.textContent = 0;
-  playerTwo.textContent = 0;
-  playerOne.style.color = "black";
-  playerTwo.style.color = "black";
+  playerOne.score = 0;
+  playerTwo.score = 0;
+  playerOne.display.textContent = 0;
+  playerTwo.display.textContent = 0;
+  playerOne.display.style.color = "black";
+  playerTwo.display.style.color = "black";
+  playerOne.button.disabled = false;
+  playerTwo.button.disabled = false;
 }
